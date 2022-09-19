@@ -1,11 +1,15 @@
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class UserInterface {
-    public static void presentTitle() {
+    Scanner input = new Scanner(System.in);
+
+    public void presentTitle() {
         System.out.println("Welcome to Task Tracker!\n");
     }
 
-    public static void presentMenu() {
+    public void presentMenu() {
         System.out.println("Please select from the options below:");
         System.out.println("1. Add a new task");
         System.out.println("2. Edit a task");
@@ -15,13 +19,12 @@ public class UserInterface {
         System.out.println("6. Exit\n");
     }
 
-    public static int chooseMenuItem() {
-        Scanner input = new Scanner(System.in);
-        int choice = Integer.valueOf(input.nextLine());
+    public int chooseMenuItem() {
+        int choice = Integer.valueOf(this.input.nextLine());
         return choice;
     }
 
-    public static void menuRouter(int choice) {
+    public void menuRouter(int choice) {
         switch(choice) {
             case 1:
                 // call addTask method
@@ -37,5 +40,32 @@ public class UserInterface {
                 // call exit method
             default:
         }
+    }
+
+    public ArrayList<String> getTaskDetailsFromUser() {
+        ArrayList<String> taskAttributes = new ArrayList<String>();
+
+        System.out.println("What is the title?");
+        String title = this.input.nextLine();
+        taskAttributes.add(title);
+
+        System.out.println("What is the due date?");
+        String dueDate = this.input.nextLine();
+        taskAttributes.add(dueDate);
+
+        System.out.println("What is the description/note?");
+        String note = this.input.nextLine();
+        taskAttributes.add(note);
+
+        return taskAttributes;
+    }
+
+    public Task createNewTask(ArrayList<String> taskAttributes) {
+        // TODO:  use 3. Converting String to java.util.Date
+        // https://www.baeldung.com/java-string-to-date
+    }
+
+    public void addTaskToDataRepository(Task task) {
+
     }
 }

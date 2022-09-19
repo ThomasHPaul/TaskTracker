@@ -1,18 +1,27 @@
 import java.util.Date;
 
 public class Task {
+    int id;
     String title;
     String note;
     boolean isComplete;
     Date dueDate;
 
     public Task(String title, String note, Date dueDate) {
+        this.id = -1;
         this.title = title;
         this.note = note;
         this.isComplete = false;
         this.dueDate = dueDate;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return this.id;
+    }
     public void setTitle(String title) {
         this.title = title;
     }
