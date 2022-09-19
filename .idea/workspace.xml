@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c438acd-c823-4ce9-b1f7-31062f3bf186" name="Changes" comment="Added Task &amp; main">
+    <list default="true" id="8c438acd-c823-4ce9-b1f7-31062f3bf186" name="Changes" comment="Task.getTask updated as toString override">
+      <change afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663528190961</updated>
-      <workItem from="1663528194936" duration="2710000" />
+      <workItem from="1663528194936" duration="3845000" />
     </task>
     <task id="LOCAL-00001" summary="Added Task &amp; main">
       <created>1663530283501</created>
@@ -57,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663530283501</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Task.getTask updated as toString override">
+      <created>1663556809847</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663556809847</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,6 +82,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Task &amp; main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Task &amp; main" />
+    <MESSAGE value="Task.getTask updated as toString override" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task.getTask updated as toString override" />
   </component>
 </project>
