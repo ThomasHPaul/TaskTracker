@@ -5,6 +5,6 @@ public class Main {
         Date testDate = new Date();
         Task test = new Task("task1", "this is a test", testDate);
 
-        System.out.println(test.getTask());
+        System.out.println(test.toString());
     }
 }

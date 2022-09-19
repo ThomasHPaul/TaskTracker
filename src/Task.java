@@ -49,8 +49,13 @@ public class Task {
         return this.dueDate.toString();
     }
 
-    public String getTask() {
-        String taskDetails = "Task<title=(" + this.getTitle() + "), dueDate=(" + this.getDueDateAsString() + "), isComplete=(" + this.isComplete + "), note=(" + this.getNote() + ")>";
-        return taskDetails;
+    @Override
+    public String toString() {
+        return "Task{" +
+                "title='" + title + '\'' +
+                ", note='" + note + '\'' +
+                ", isComplete=" + isComplete +
+                ", dueDate=" + dueDate +
+                '}';
     }
 }
