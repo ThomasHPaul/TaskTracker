@@ -1,5 +1,8 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -24,10 +27,10 @@ public class UserInterface {
         return choice;
     }
 
-    public void menuRouter(int choice) {
+    public void menuRouter(InMemoryDataContainer container, int choice) throws ParseException {
         switch(choice) {
             case 1:
-                // call addTask method
+                this.addTaskWorkflow(container);
             case 2:
                 // call editTask method
             case 3:
@@ -40,6 +43,11 @@ public class UserInterface {
                 // call exit method
             default:
         }
+    }
+    public void addTaskWorkflow(InMemoryDataContainer container) throws ParseException {
+        ArrayList<String> taskDetails = this.getTaskDetailsFromUser();
+        Task newTask = this.createNewTask(taskDetails);
+        this.addTaskToDataRepository(newTask, container);
     }
 
     public ArrayList<String> getTaskDetailsFromUser() {
@@ -60,12 +68,18 @@ public class UserInterface {
         return taskAttributes;
     }
 
-    public Task createNewTask(ArrayList<String> taskAttributes) {
-        // TODO:  use 3. Converting String to java.util.Date
-        // https://www.baeldung.com/java-string-to-date
+    public Task createNewTask(ArrayList<String> taskAttributes) throws ParseException {
+        final int DATE_INDEX = 1;
+        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy", Locale.ENGLISH);
+        Date dueDate = formatter.parse(taskAttributes.get(DATE_INDEX));
+        String title = taskAttributes.get(0);
+        String note = taskAttributes.get(2);
+
+        Task task = new Task(title, note, dueDate);
+        return task;
     }
 
-    public void addTaskToDataRepository(Task task) {
-
+    public void addTaskToDataRepository(Task task, InMemoryDataContainer container) {
+        container.addTask(task);
     }
 }
